@@ -1,6 +1,6 @@
 const Product = require('../models/Product.model.js');
 
-// Create and Save a new Customer
+// Create and Save a new Product
 exports.create = (req, res) => {
   if(!req.body){
     res.status(400).send({
@@ -27,7 +27,7 @@ exports.create = (req, res) => {
 
 };
 
-// Create and Save a new Customer
+// Search a Specific Product in the database
 exports.searchAll = (req, res) => {
   if(!req.body){
     res.status(400).send({
