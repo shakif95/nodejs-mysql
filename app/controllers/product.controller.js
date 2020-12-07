@@ -11,12 +11,39 @@ exports.create = (req, res) => {
   const product = new Product({
     name: req.body.name,
     description: req.body.description,
-    category: req.body.category,
-    status: req.body.status,
-    sold: req.body.sold
+    category_id: req.body.category_id,
+    status_id: req.body.status_id,
+    price: req.body.price
   });
 
   Product.create(product, (err, data) => {
+    if(err){
+      res.status(500).send({
+        message: err.message || 'Server error'
+      });
+    }
+    else res.send(data);
+  });
+
+};
+
+// Create and Save a new Customer
+exports.searchAll = (req, res) => {
+  if(!req.body){
+    res.status(400).send({
+      message: 'invalid request body'
+    });
+  }
+
+  const product = new Product({
+    name: req.body.name,
+    description: req.body.description,
+    category_id: req.body.category_id,
+    status_id: req.body.status_id,
+    price: req.body.price
+  });
+
+  Product.search(product, (err, data) => {
     if(err){
       res.status(500).send({
         message: err.message || 'Server error'

@@ -7,6 +7,8 @@ module.exports = app => {
   // Retrieve all Customers
   app.get("/products", products.findAll);
 
+  app.post("/productsSearch", products.searchAll);
+
 //   // Retrieve a single Customer with customerId
 //   app.get("/customers/:customerId", customers.findOne);
 

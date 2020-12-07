@@ -1,6 +1,6 @@
 module.exports = {
   HOST: "localhost",
   USER: "root",
-  PASSWORD: "password",
-  DB: "testdb"
+  PASSWORD: "Khan123@",
+  DB: "myunishop_db"
 }
